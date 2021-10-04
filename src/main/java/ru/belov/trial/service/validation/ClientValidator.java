@@ -18,8 +18,8 @@ public class ClientValidator implements EntityValidator<ClientEntity> {
     }
 }
 
+@Component
 class ClientUuidNotNull implements ValidationChainElement<ClientEntity, Params> {
-
 
     @Override
     public void apply(ClientEntity data, Params params) {

@@ -2,8 +2,10 @@ package ru.belov.trial.entity;
 
 import lombok.*;
 import ru.belov.trial.constant.ClientType;
+import ru.belov.trial.constant.Language;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @Setter
@@ -11,13 +13,9 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClientEntity {
+public class PaymentMethod {
 
     private UUID uuid;
+    private String bankAccount;
     private boolean active;
-    private String name;
-    private List<UUID> paymentMethodUuidList;
-    private String cityCode;
-    private String clientTypeCode;
-    private String phoneNumber;
 }

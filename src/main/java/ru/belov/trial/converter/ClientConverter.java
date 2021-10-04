@@ -11,7 +11,7 @@ public class ClientConverter {
     public ClientEntity toEntity(ClientSaveRequestDto dto) {
         return ClientEntity.builder()
                 .active(dto.isActive())
-                .clientType(dto.getClientType())
+                .clientTypeCode(dto.getClientType().getCode())
                 .name(dto.getName())
                 .cityCode(dto.getCityCode())
                 .phoneNumber(dto.getPhoneNumber())

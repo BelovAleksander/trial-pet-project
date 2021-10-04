@@ -15,6 +15,6 @@ import java.util.UUID;
 public class ClientUpdateRequestDto extends ClientSaveRequestDto {
 
     @NotNull(message = ExceptionMessage.CLIENT_UUID_IS_NULL)
-    @Schema(description = "UUID клиента", example = "", required = true)
+    @Schema(description = "UUID клиента", example = "a1adc05a-d47d-4397-bc69-2a938a3907ce", required = true)
     private UUID uuid;
 }

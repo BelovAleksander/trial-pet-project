@@ -9,6 +9,8 @@ import ru.belov.trial.entity.ClientEntity;
 import ru.belov.trial.service.esb.EsbSender;
 import ru.belov.trial.service.validation.params.ClientParams;
 
+import java.util.UUID;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -21,6 +23,7 @@ public class ClientService {
     @Transactional
     public void save(ClientEntity client) {
         validator.checkData(client, new ClientParams());
+        client.setUuid(UUID.randomUUID());
         clientDao.save(client);
         esbSender.send(client);
     }

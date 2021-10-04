@@ -27,19 +27,20 @@ public class ClientSaveRequestDto extends CommonDto {
 
     @NotNull(message = ExceptionMessage.CLIENT_NAME_IS_NULL)
     @NotEmpty(message = ExceptionMessage.CLIENT_NAME_IS_EMPTY)
-    @Schema(description = "Наименование клиента", example = "{ \"RUS\": \"Петр\", \"ENG\": \"Petr\"}", required = true)
-    private Map<Language, String> name;
+    @Schema(description = "Наименование клиента", example = "Петр", required = true)
+    private String name;
 
-    @Schema(description = "Список UUID привязанных методов оплаты", example = "[ \"\", \"\"]")
+    @Schema(description = "Список UUID привязанных методов оплаты",
+            example = "[ \"a1adc05a-d47d-4397-bc69-2a938a3907ce\", \"7cb0a38c-4bfd-438c-a5ce-4882ecb6248d\"]")
     private List<UUID> paymentMethodUuidList;
 
     @NotNull(message = ExceptionMessage.CLIENT_CITY_CODE_IS_NULL)
     @NotEmpty(message = ExceptionMessage.CLIENT_CITY_CODE_IS_EMPTY)
-    @Schema(description = "Код города", example = "12345", required = true)
+    @Schema(description = "Код города", example = "1", required = true)
     private String cityCode;
 
     @NotNull(message = ExceptionMessage.CLIENT_TYPE_IS_NULL)
-    @Schema(description = "Тип клиента", example = "UR", required = true, allowableValues = "UR, FIZ")
+    @Schema(description = "Тип клиента", example = "1", required = true, allowableValues = "UR, FIZ")
     private ClientType clientType;
 
     @NotNull(message = ExceptionMessage.CLIENT_PHONE_IS_NULL)

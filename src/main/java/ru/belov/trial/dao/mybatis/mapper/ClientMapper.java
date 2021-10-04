@@ -1,4 +1,4 @@
-package ru.belov.trial.dao.mybatis;
+package ru.belov.trial.dao.mybatis.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import ru.belov.trial.dao.ClientDao;
