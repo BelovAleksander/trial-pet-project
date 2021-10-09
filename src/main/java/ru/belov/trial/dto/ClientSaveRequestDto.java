@@ -18,7 +18,7 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "Транспорт для создания отчета")
+@Schema(description = "Транспорт для создания клиента")
 public class ClientSaveRequestDto extends CommonDto {
 
     @NotNull(message = ExceptionMessage.CLIENT_ACTIVE_FLAG_IS_NULL)
@@ -40,7 +40,7 @@ public class ClientSaveRequestDto extends CommonDto {
     private String cityCode;
 
     @NotNull(message = ExceptionMessage.CLIENT_TYPE_IS_NULL)
-    @Schema(description = "Тип клиента", example = "1", required = true, allowableValues = "UR, FIZ")
+    @Schema(description = "Тип клиента", example = "UR", required = true, allowableValues = "UR, FIZ")
     private ClientType clientType;
 
     @NotNull(message = ExceptionMessage.CLIENT_PHONE_IS_NULL)

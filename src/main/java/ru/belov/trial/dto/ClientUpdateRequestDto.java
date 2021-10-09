@@ -11,7 +11,7 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "Транспорт для редактирования отчета")
+@Schema(description = "Транспорт для редактирования клиента")
 public class ClientUpdateRequestDto extends ClientSaveRequestDto {
 
     @NotNull(message = ExceptionMessage.CLIENT_UUID_IS_NULL)
