@@ -15,4 +15,31 @@
         )
     </insert>
 
+    <select id="findByUuid" resultMap="clientMap">
+        SELECT uuid,
+        active,
+        name,
+        city_code,
+        client_type_code,
+        phone_number
+        FROM client
+        WHERE uuid = #{clientUuid}
+    </select>
+
+    <sql id="findPaymentMethodUuidList">
+        SELECT payment_method_uuid
+        FROM client_payment_link
+        WHERE client_uuid = #{clientUuid}
+    </sql>
+
+    <resultMap id="clientMap" type="ru.belov.trial.entity.ClientEntity">
+        <result property="uuid" column="uuid"/>
+        <result property="active" column="active"/>
+        <result property="name" column="name"/>
+        <result property="cityCode" column="city_code"/>
+        <result property="clientTypeCode" column="client_type_code"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <collection property="paymentMethodUuidList" javaType="java.util.UUID" select="findPaymentMethodUuidList"
+                    column="clientUuid=uuid"/>
+    </resultMap>
 </mapper>
