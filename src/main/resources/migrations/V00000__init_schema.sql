@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS client_type(
 CREATE TABLE IF NOT EXISTS client(
     uuid                            UUID      PRIMARY KEY,
     active                          BOOLEAN NOT NULL,
-    name                            TEXT NOT NULL,
+    name                            JSONB NOT NULL,
     city_code                       TEXT NOT NULL REFERENCES city(code),
     client_type_code                TEXT NOT NULL REFERENCES client_type(code),
     phone_number                    TEXT NOT NULL,

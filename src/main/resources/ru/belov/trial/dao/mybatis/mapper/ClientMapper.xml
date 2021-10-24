@@ -39,7 +39,7 @@
         <result property="cityCode" column="city_code"/>
         <result property="clientTypeCode" column="client_type_code"/>
         <result property="phoneNumber" column="phone_number"/>
-        <collection property="paymentMethodUuidList" javaType="java.util.UUID" select="findPaymentMethodUuidList"
-                    column="clientUuid=uuid"/>
+        <!--<collection property="paymentMethodUuidList" javaType="java.util.UUID" select="findPaymentMethodUuidList"
+                    column="clientUuid=uuid"/>-->
     </resultMap>
 </mapper>

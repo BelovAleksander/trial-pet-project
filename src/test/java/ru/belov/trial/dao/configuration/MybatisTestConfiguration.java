@@ -25,13 +25,14 @@ public class MybatisTestConfiguration {
 
     @Bean
     public DataSource dataSource() throws SQLException {
-        return PreparedDbProvider
+        var datasource = PreparedDbProvider
                 .forPreparer(
                         new CustomFlywayPreparer(),
                         Collections.singleton(builder ->
                                 builder.setConnectConfig(PGProperty.STRING_TYPE.getName(), "unspecified")
                         ))
                 .createDataSource();
+        return datasource;
     }
 
     @Bean

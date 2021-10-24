@@ -2,6 +2,7 @@ package ru.belov.trial.entity;
 
 import lombok.*;
 import ru.belov.trial.constant.ClientType;
+import ru.belov.trial.infrastructure.LocalizedString;
 
 import java.util.List;
 import java.util.UUID;
@@ -15,7 +16,7 @@ public class ClientEntity {
 
     private UUID uuid;
     private boolean active;
-    private String name;
+    private LocalizedString name;
     private List<UUID> paymentMethodUuidList;
     private String cityCode;
     private String clientTypeCode;

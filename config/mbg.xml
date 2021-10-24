@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <context id="trial" targetRuntime="MyBatis3">
+    <context id="trial" targetRuntime="MyBatis3DynamicSql">
         <!--<commentGenerator>
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>-->
@@ -21,10 +21,17 @@
         </javaTypeResolver>
 
         <javaModelGenerator targetPackage="test.model" targetProject="src/test/java"/>
-        <sqlMapGenerator targetPackage="test.mapper" targetProject="src/test/java/resources"/>
-        <javaClientGenerator targetPackage="test.mapper" targetProject="src/test/java" type="XMLMAPPER" />
+        <javaClientGenerator targetPackage="test.mapper" targetProject="src/test/java"/>
 
         <table tableName="client" domainObjectName="ClientG" mapperName="ClientGMapper">
+            <columnOverride column="uuid" javaType="java.util.UUID"/>
+            <columnOverride column="name" javaType="ru.belov.trial.infrastructure.LocalizedString"/>
+            <ignoreColumn column="datetime_created"/>
+            <ignoreColumn column="datetime_updated"/>
+        </table>
+
+        <table tableName="city" domainObjectName="CityG" mapperName="CityGMapper">
+            <columnOverride column="name" javaType="ru.belov.trial.infrastructure.LocalizedString"/>
         </table>
     </context>
 </generatorConfiguration>

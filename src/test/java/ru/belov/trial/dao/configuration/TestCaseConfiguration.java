@@ -4,6 +4,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(value = {"test.helper", "test.util"})
+@ComponentScan(value = {"test"})
 public class TestCaseConfiguration {
 }

@@ -5,6 +5,7 @@ import lombok.*;
 import ru.belov.trial.constant.ClientType;
 import ru.belov.trial.constant.ExceptionMessage;
 import ru.belov.trial.constant.Language;
+import ru.belov.trial.infrastructure.LocalizedString;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -28,7 +29,7 @@ public class ClientSaveRequestDto extends CommonDto {
     @NotNull(message = ExceptionMessage.CLIENT_NAME_IS_NULL)
     @NotEmpty(message = ExceptionMessage.CLIENT_NAME_IS_EMPTY)
     @Schema(description = "Наименование клиента", example = "Петр", required = true)
-    private String name;
+    private LocalizedString name;
 
     @Schema(description = "Список UUID привязанных методов оплаты",
             example = "[ \"a1adc05a-d47d-4397-bc69-2a938a3907ce\", \"7cb0a38c-4bfd-438c-a5ce-4882ecb6248d\"]")

@@ -17,6 +17,7 @@
         <typeHandler handler="ru.belov.trial.dao.mybatis.util.UuidTypeHandler" javaType="java.util.UUID"/>
         <typeHandler handler="ru.belov.trial.dao.mybatis.util.LocalDateTypeHandler" javaType="java.time.LocalDate"/>
         <typeHandler handler="ru.belov.trial.dao.mybatis.util.LocalDateTimeTypeHandler" javaType="java.time.LocalDateTime"/>
+        <typeHandler handler="ru.belov.trial.dao.mybatis.util.LocalizedStringTypeHandler" javaType="ru.belov.trial.infrastructure.LocalizedString"/>
     </typeHandlers>
 
     <mappers>
