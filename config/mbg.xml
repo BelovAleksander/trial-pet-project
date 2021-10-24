@@ -15,11 +15,6 @@
                         password="postgres">
         </jdbcConnection>
 
-        <javaTypeResolver>
-            <!--Использование LocalDate, LocalDateTime и тд -->
-            <property name="useJSR310Types" value="true"/>
-        </javaTypeResolver>
-
         <javaModelGenerator targetPackage="test.model" targetProject="src/test/java"/>
         <javaClientGenerator targetPackage="test.mapper" targetProject="src/test/java"/>
 
@@ -28,10 +23,6 @@
             <columnOverride column="name" javaType="ru.belov.trial.infrastructure.LocalizedString"/>
             <ignoreColumn column="datetime_created"/>
             <ignoreColumn column="datetime_updated"/>
-        </table>
-
-        <table tableName="city" domainObjectName="CityG" mapperName="CityGMapper">
-            <columnOverride column="name" javaType="ru.belov.trial.infrastructure.LocalizedString"/>
         </table>
     </context>
 </generatorConfiguration>
