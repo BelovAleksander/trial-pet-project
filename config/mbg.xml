@@ -5,24 +5,24 @@
 
 <generatorConfiguration>
     <context id="trial" targetRuntime="MyBatis3DynamicSql">
-        <!--<commentGenerator>
-            <property name="suppressAllComments" value="true"/>
-        </commentGenerator>-->
-
         <jdbcConnection driverClass="org.postgresql.Driver"
-                        connectionURL="jdbc:postgresql://localhost:5434/trial_pet"
+                        connectionURL="jdbc:postgresql://localhost:5432/trial_pet"
                         userId="postgres"
                         password="postgres">
         </jdbcConnection>
 
+        <!--пакет, в котором будут храниться сгенерированные модели -->
         <javaModelGenerator targetPackage="test.model" targetProject="src/test/java"/>
+        <!--пакет, в котором будут храниться сгенерированные мапперы -->
         <javaClientGenerator targetPackage="test.mapper" targetProject="src/test/java"/>
 
+        <!--объявляем таблицу, для которой будут генерироваться модель и маппер -->
         <table tableName="client" domainObjectName="ClientG" mapperName="ClientGMapper">
             <columnOverride column="uuid" javaType="java.util.UUID"/>
             <columnOverride column="name" javaType="ru.belov.trial.infrastructure.LocalizedString"/>
             <ignoreColumn column="datetime_created"/>
             <ignoreColumn column="datetime_updated"/>
         </table>
+
     </context>
 </generatorConfiguration>
