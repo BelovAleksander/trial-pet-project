@@ -4,9 +4,9 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <context id="trial" targetRuntime="MyBatis3DynamicSql">
+    <context id="bookstore" targetRuntime="MyBatis3DynamicSql">
         <jdbcConnection driverClass="org.postgresql.Driver"
-                        connectionURL="jdbc:postgresql://localhost:5432/trial_pet"
+                        connectionURL="jdbc:postgresql://localhost:5432/bookstore"
                         userId="postgres"
                         password="postgres">
         </jdbcConnection>
@@ -19,7 +19,7 @@
         <!--объявляем таблицу, для которой будут генерироваться модель и маппер -->
         <table tableName="client" domainObjectName="ClientG" mapperName="ClientGMapper">
             <columnOverride column="uuid" javaType="java.util.UUID"/>
-            <columnOverride column="name" javaType="ru.belov.trial.infrastructure.LocalizedString"/>
+            <columnOverride column="name" javaType="ru.belov.bookstore.domain.entity.LocalizedString"/>
             <ignoreColumn column="datetime_created"/>
             <ignoreColumn column="datetime_updated"/>
         </table>

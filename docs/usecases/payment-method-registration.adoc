@@ -1,0 +1,24 @@
+= UC Payment method registration
+
+[plantuml, format="svg"]
+----
+
+actor "user" as user
+box "bookservice app"
+boundary "PaymentMethodController" as controller
+control "CreatePaymentMethodUseCase" as service
+end box
+database "ozon_integration DB" as db
+participant "ozon-rocket" as rocket #LightBlue
+
+scheduler -> app: запуск каждые ? секунд
+
+app -> db: достаем из БД все заказы,\n у которых officeCode = MMS1\n и sentOzon = false
+
+app -> rocket: запрос на создание заказа\n POST [[https://confluence.cdek.ru/pages/viewpage.action?pageId=95592497&#req-API.Inter.OzonRocket.CreateOrder /v1/order ]]
+
+app -> db: проставление sentOzon = true,\n сохранение в БД
+
+scheduler <-- app: КОНЕЦ
+
+----

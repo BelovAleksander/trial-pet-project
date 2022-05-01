@@ -1,0 +1,50 @@
+= L4 Payment method registration
+
+[plantuml,format="svg"]
+----
+@startuml
+
+
+legend left
+    |Color| Type |
+    |<#White>| Other classes|
+    |<#LightBlue>| Data Structure classes|
+endlegend
+
+package WEB <<Rectangle>> {
+  class Controller #White
+  class Dto #LightBlue
+}
+
+package DOMAIN <<Rectangle>> {
+  class UseCase #White
+  class Entity #LightBlue
+  interface Dao #White
+}
+
+package DAO <<Rectangle>> {
+    class MyBatisMapper #White
+    class JpaRepository #White
+    class JpaEntity #LightBlue
+}
+
+WEB -[hidden]> DOMAIN
+DOMAIN -[hidden]> DAO
+
+
+Controller --* Dto
+Controller --* Entity
+Controller --* UseCase
+
+UseCase --* Entity
+UseCase --* Dao
+Dao --* Entity
+
+MyBatisMapper --|> Dao
+MyBatisMapper --* Entity
+JpaRepository --|> Dao
+JpaRepository --* JpaEntity
+JpaRepository --* Entity
+
+@enduml
+----

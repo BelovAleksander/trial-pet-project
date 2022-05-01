@@ -5,7 +5,7 @@ import java.util.UUID;
 import javax.annotation.Generated;
 import org.mybatis.dynamic.sql.SqlColumn;
 import org.mybatis.dynamic.sql.SqlTable;
-import ru.belov.trial.infrastructure.LocalizedString;
+import ru.belov.bookstore.domain.entity.LocalizedString;
 
 public final class ClientGDynamicSqlSupport {
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2021-10-28T08:36:00.295291+03:00", comments="Source Table: client")

@@ -1,15 +1,15 @@
 package test.infrastructure;
 
 import org.springframework.stereotype.Component;
-import ru.belov.trial.constant.ClientType;
-import ru.belov.trial.infrastructure.LocalizedString;
+import ru.belov.bookstore.application.constant.ClientType;
+import ru.belov.bookstore.domain.entity.LocalizedString;
 import test.model.ClientG;
 
 import java.util.UUID;
 
-import static ru.belov.trial.constant.Language.RUS;
-import static ru.belov.trial.dao.util.CommonValuesUtil.randomCode;
-import static ru.belov.trial.dao.util.CommonValuesUtil.randomText;
+import static ru.belov.bookstore.application.constant.Language.RUS;
+import static test.util.TestValuesUtil.randomCode;
+import static test.util.TestValuesUtil.randomName;
 
 /**
  * Создание и насыщение моделей дефолтными значениями
@@ -21,8 +21,8 @@ public class DefaultEntityHelper {
         var client = new ClientG();
         client.setUuid(UUID.randomUUID());
         client.setActive(true);
-        client.setName(LocalizedString.from(RUS, randomText()));
-        client.setPhoneNumber(randomText());
+        client.setName(LocalizedString.from(RUS, randomName()));
+        client.setPhoneNumber(randomCode());
         client.setClientTypeCode(clientType.getCode());
         client.setCityCode(randomCode());
 

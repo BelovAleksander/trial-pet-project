@@ -2,7 +2,7 @@ package test.model;
 
 import java.util.UUID;
 import javax.annotation.Generated;
-import ru.belov.trial.infrastructure.LocalizedString;
+import ru.belov.bookstore.domain.entity.LocalizedString;
 
 public class ClientG {
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", date="2021-10-28T08:36:00.28996+03:00", comments="Source field: client.uuid")
