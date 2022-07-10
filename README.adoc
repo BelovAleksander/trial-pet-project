@@ -5,3 +5,5 @@ This is a demo project and is primarily intended to training and demonstrate my 
 This project simulates book store. Key entities are Client, Book and Order. More detailed information can be found at /docs. There you can also find L3 and L4 level diagramms https://c4model.com/[according to C4 model].
 
 At the moment, the dao layer is implemented in three different variations, which can be switched by changing the value of the property "database.framework" (mybatis/hibernate/mangodb) at the application.properties
+
+UPD: last time I've been getting into learning DDD, so there goint to be some confusion in the architecture and package structure. 
